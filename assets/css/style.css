@@ -1,0 +1,103 @@
+/*font-family: 'Oswald', sans-serif;
+font-family: 'Lato', sans-serif;*/
+
+
+/*Color Palette
+#727269: used
+#534c4e: text
+#431c2b: headline
+#535b54: borders
+#81969c: shadow/glow
+#485b5d: misc
+*/
+
+body {
+    background-image: url("../images/background.jpg");
+    background-size: 100%;
+    background-repeat: repeat;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+header {
+    font-family: 'Lato', sans-serif;
+    font-size: 24;
+    color: #431c2b;
+}
+
+h1 {
+	text-align: center;
+	font-size: 32px;
+	color: red;
+	text-shadow: 2px 2px 2px black;
+}
+
+h3 {
+    text-align: center;
+}
+
+/*game-wide styles*/
+
+main {
+    opacity: 85%;
+}
+
+#attack {
+    visibility: hidden;
+}
+/*row styles*/
+
+section {
+	min-height: 125px;
+}
+
+
+.picker div{
+    float: left;
+}
+
+#a-b {
+    float: left;
+    width: 50%;
+}
+#a-v {
+    float: right;
+    width: 50%;
+}
+
+img{
+    /*background-color: red;*/
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    opacity: .5;
+}
+
+
+#bond-list img {
+    box-shadow: 2px 2px 3px white;
+}
+
+
+button {}
+
+
+#arena {}
+
+#arena div {}
+
+#a-left {}
+
+#a-right {}
+
+.lane {}
+
+#bfight {}
+
+#vfight {}
+
+#health{
+	width: 100%;
+	height: 50px;
+	color: yellow;
+}
