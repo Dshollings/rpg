@@ -13,8 +13,8 @@ $(document).ready(function() {
 
     var bonds = [{
             name: "Brosnan",
-            hp: 50,
-            ap: 40,
+            hp: 60,
+            ap: 50,
             photo: "<img src ='assets/images/bond-brosnan.jpg'>"
         },
 
@@ -35,7 +35,7 @@ $(document).ready(function() {
         {
             name: "Moore",
             hp: 125,
-            ap: 10,
+            ap: 15,
             photo: "<img src='assets/images/bond-moore.jpg'>"
         }
     ]
@@ -91,8 +91,9 @@ $(document).ready(function() {
     var bRand = 0;
     var vRand = 0;
 
-    $(".reset").click(function(){
-    location.reload();
+    $("#resetbut").click(function(){
+        console.log("reset clicked")
+        location.reload();
     })
 
     $("#attack").click(function(){
@@ -103,17 +104,17 @@ $(document).ready(function() {
 
         if (bHp <= 0) {
             $("#messageOne").html("You Lost!");
-            $("#attack").replaceWith("<button class='reset'>Reset</button>");
+            $("#attack").css("visibility", "hidden");
             $("body").css("visibility", "hidden");
-            $(".reset").css("visibility", "visible");
+            $("#resetbut").css("visibility", "visible");
             $("#messageOne").css("visibility", "visible");
         } 
 
         else if (vHp <= 0) {
+            $("#attack").css("visibility", "hidden");
             if (wins === 2) {
                 $("#messageOne").html("You defeated " + theV.getAttribute("name") + "! You Win!!!");
-                $("#bpdisp").empty();
-                $("#attack").replaceWith("<button class='reset'>Reset</button>");
+                $("#bpdisp").empty()
             } else {
                 wins++;
                 console.log("w: " + wins);
@@ -122,12 +123,11 @@ $(document).ready(function() {
                 $("#messageOne").html("You defeated " + theV.getAttribute("name") + "! Pick another Opponent");
                 $(".bondable").on("click");
                 $("#bond-list").css("visibility", "visible");
-                $("#attack").css("visibility", "hidden");
             }
 
         }  else {
             vRand = vRand + .1;
-            bRand = bRand + .25;
+            bRand = bRand + .35;
             var brannum = (Math.random() * bRand) + 1;
             var vrannum = (Math.random() * vRand) + 1;
             bAp = Math.floor(bAp * brannum);
